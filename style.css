@@ -1,0 +1,653 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif; /* Oh yes. */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* A nice neutral, slightly depressing background */
+    color: #333;
+    background-image: linear-gradient(to bottom right, #f2f2f2, #e0e0e0, #d5d5d5); /* Subtle gradient instead of texture */
+}
+
+header {
+    background-color: #800000; /* Dark maroon, like cheap tablecloths */
+    color: #f8d568; /* Slightly toned down gold, for "class" */
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 10px dashed #551a8b; /* Vaguely Applebee's purple, but dashed and thicker */
+    background-image: linear-gradient(to bottom, #800000, #600000); /* Gradient instead of texture */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+/* Fancy restaurant header decorations */
+header::before, header::after {
+    content: '✯';
+    font-size: 3rem;
+    color: #f8d568;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header::before {
+    left: 15%;
+}
+
+header::after {
+    right: 15%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem; /* Bigger! */
+    text-shadow: 3px 3px 0px #551a8b, 5px 5px 0px rgba(0,0,0,0.2); /* Drop shadow for that '90s GeoCities look */
+    font-family: 'Times New Roman', serif; /* Fancy font for the title */
+    letter-spacing: 2px;
+}
+
+header h2 {
+    margin: 0.5rem 0 0 0;
+    font-weight: normal;
+    font-size: 1.4rem; /* Slightly larger */
+    font-style: italic;
+}
+
+main {
+    max-width: 800px;
+    margin: 3rem auto; /* More space */
+    padding: 0 1rem;
+}
+
+section {
+    background-color: #fff; /* White boxes for content */
+    margin-bottom: 2rem; /* More space between sections */
+    padding: 2rem;
+    border: 3px solid #ddd; /* Thicker border */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    background-image: linear-gradient(to bottom, #ffffff, #f9f9f9); /* Very subtle gradient instead of texture */
+}
+
+h3 {
+    color: #800000; /* Restaurant maroon for headings */
+    border-bottom: 4px dotted #f8d568; /* Dotted gold-ish underline */
+    padding-bottom: 0.75rem;
+    margin-top: 0;
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: 'Times New Roman', serif; /* Fancy serif font */
+}
+
+ul {
+    list-style: square; /* Let's use squares for extra ugliness */
+    padding-left: 30px; /* Indent the ugly squares */
+}
+
+li {
+    background-color: #f0f0f0; /* Slightly different off-white list items */
+    margin-bottom: 0.8rem;
+    padding: 0.8rem;
+    border-left: 5px solid #c00; /* Thicker McDonald's-ish left border */
+    border-right: 5px solid #551a8b; /* Add an Applebee's-ish right border! */
+    border-radius: 5px;
+}
+
+/* Alternating list item colors for maximum eye-bleed */
+section ul li:nth-child(odd) {
+    background-image: linear-gradient(to right, #fffacd, #fff8e7); /* Gradient instead of flat color */
+}
+section ul li:nth-child(even) {
+    background-image: linear-gradient(to right, #add8e6, #c5e2f0); /* Gradient instead of flat color */
+}
+
+strong { /* Make the bold text stand out... maybe too much */
+    color: #c00;
+    font-weight: 900; /* Extra bold */
+}
+
+/* Image Styling - Let's make them fit awkwardly */
+.menu-image {
+    float: right;
+    width: 150px; /* Slightly larger for "prominence" */
+    height: auto;
+    border: none; /* Remove thick border */
+    padding: 8px; /* Add padding instead */
+    background-image: linear-gradient(to bottom right, #f8d568, #d4b144); /* Gradient background instead of border */
+    margin: 0 0 10px 15px;
+    filter: sepia(30%) saturate(150%); /* Subtly bad filter */
+    transform: rotate(3deg); /* Slightly crooked - classy! */
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2); /* Add shadow for depth */
+    position: relative;
+    z-index: 10; /* Make sure images stay above text */
+}
+
+.info-image {
+    display: block;
+    margin: 1.5rem auto;
+    max-width: 80%;
+    border: none; /* Remove thick border */
+    padding: 10px; /* Add padding instead */
+    background-image: linear-gradient(45deg, #800000, #a53535); /* Gradient background instead of border */
+    box-shadow: 0 0 20px rgba(240, 173, 78, 0.7); /* Keep the gold-ish glow */
+    position: relative;
+    z-index: 5; /* Make sure images stay above background */
+}
+
+/* Image container for better spacing and positioning */
+.image-container {
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Specifically target the restaurant interior image to make it more prominent */
+#about .info-image {
+    max-width: 100%; /* Full width */
+    margin-bottom: 0; /* Remove bottom margin since container has it */
+    height: auto;
+    object-fit: contain;
+    box-sizing: border-box;
+    display: inline-block; /* Change from block to inline-block */
+}
+
+/* Fix for the McRibTini image so it doesn't hide behind content */
+.daily-special .menu-image {
+    float: none;
+    display: inline-block;
+    margin: 0 auto 10px;
+    transform: rotate(0deg); /* Keep it straight */
+}
+
+/* Quote styling for SAD facts */
+.sad-quote {
+    font-style: italic;
+    padding: 1rem 2rem;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6)); /* Gradient background */
+    border-left: 5px solid #800000;
+    margin: 1.5rem 0;
+    border-radius: 0 10px 10px 0;
+}
+
+/* Signature dish marker */
+.signature-dish {
+    position: relative;
+}
+
+.signature-dish::after {
+    content: "HOUSE SPECIALTY";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-image: linear-gradient(to bottom, #800000, #600000); /* Gradient instead of flat color */
+    color: #f8d568;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    transform: rotate(15deg);
+    border: 1px dashed #f8d568;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #fff; /* White text */
+    background-color: #333; /* Dark background */
+    border-top: 5px solid #f8d568;
+    background-image: linear-gradient(to bottom, #333333, #222222); /* Gradient instead of texture */
+}
+
+.established {
+    font-family: "Comic Sans MS", cursive;
+    font-size: 1rem;
+    color: #f8d568;
+    margin-top: 0.5rem;
+    border: none; /* Remove border */
+    background-image: linear-gradient(to right, #600000, #800000, #600000); /* Gradient background */
+    display: inline-block;
+    padding: 0.2rem 1rem;
+    transform: rotate(-3deg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+/* Add shimmer effect to established banner */
+.established::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to right, 
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: rotate(30deg) translateX(-100%); }
+    100% { transform: rotate(30deg) translateX(100%); }
+}
+
+.daily-special {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.daily-special::before {
+    content: "✂ - - - - - - - - - - - - - - - - - - - - - - ✂";
+    display: block;
+    font-size: 0.9rem;
+    color: #800000;
+    margin-bottom: 0.5rem;
+}
+
+.daily-special::after {
+    content: "✂ - - - - - - - - - - - - - - - - - - - - - - ✂";
+    display: block;
+    font-size: 0.9rem;
+    color: #800000;
+    margin-top: 0.5rem;
+}
+
+.daily-special h4 {
+    font-family: "Brush Script MT", cursive;
+    font-size: 1.5rem;
+    color: #800000;
+    margin: 0.5rem 0;
+}
+
+.small-print {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    max-width: 80%;
+    margin: 1rem auto 0;
+}
+
+/* Footer disclaimer */
+.disclaimer {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.3);
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.disclaimer p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0.5rem 0;
+}
+
+.disclaimer p:last-child {
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Animated blinking effect for signature dish */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.signature-dish::after {
+    animation: blink 2s infinite;
+}
+
+/* Clearfix for floated elements */
+.clearfix {
+    clear: both;
+    display: block;
+    content: "";
+    height: 0;
+    visibility: hidden;
+    overflow: auto; /* Add overflow to handle any floating issues */
+}
+
+/* Special styling for the reality check section */
+#sad-reality-check {
+    background-image: linear-gradient(to bottom, #ffffff, #ffe6e6); /* Subtle red-tinged gradient */
+    border-left: 8px solid #800000;
+    border-right: 8px solid #800000;
+}
+
+#sad-reality-check h3 {
+    color: #800000;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-bottom: 4px solid #800000;
+}
+
+#sad-reality-check h4 {
+    font-family: 'Times New Roman', serif;
+    color: #600000;
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    text-align: center;
+}
+
+/* Bleak facts styling */
+.bleak-facts li {
+    background-image: linear-gradient(to right, #fff0f0, #ffd6d6); /* Redder gradient for the facts */
+    border-left: 6px solid #800000;
+    border-right: 6px solid #800000;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+/* Ingredient list styling */
+.ingredient-list {
+    background-color: rgba(255, 240, 240, 0.7);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    border: 2px dashed #800000;
+}
+
+.ingredient-list p {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.ingredient-list ul {
+    column-count: 2;
+    column-gap: 2rem;
+}
+
+@media (max-width: 600px) {
+    .ingredient-list ul {
+        column-count: 1;
+    }
+}
+
+.ingredient-list li {
+    background: none;
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+    border: none;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.ingredient-list li::before {
+    content: "⚠️";
+    position: absolute;
+    left: 0;
+}
+
+/* Absurd Comparisons styling */
+.absurd-comparisons {
+    margin: 2rem 0;
+}
+
+.comparison {
+    background-image: linear-gradient(to right, #fff, #f8f8f8);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas:
+        "item1 versus item2"
+        "winner winner winner";
+    gap: 10px;
+    align-items: center;
+}
+
+.item {
+    padding: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.item:first-child {
+    grid-area: item1;
+    background-image: linear-gradient(to bottom, #fee, #fcc);
+    border: 1px solid #800000;
+}
+
+.item:last-of-type {
+    grid-area: item2;
+    background-image: linear-gradient(to bottom, #efe, #dfd);
+    border: 1px solid #060;
+}
+
+.versus {
+    grid-area: versus;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #800000;
+    text-align: center;
+}
+
+.winner {
+    grid-area: winner;
+    text-align: center;
+    background-color: #ffffcc;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    border: 1px dashed #800000;
+    color: #800000;
+}
+
+.final-thought {
+    font-size: 1.3rem;
+    text-align: center;
+    font-style: italic;
+    margin: 2rem 0 1rem;
+    color: #800000;
+    padding: 1rem;
+    background-image: linear-gradient(to right, rgba(255,255,255,0.7), rgba(255,240,240,0.7), rgba(255,255,255,0.7));
+    border-radius: 10px;
+}
+
+/* Stats styling for shocking facts */
+.sad-stat {
+    margin: 2rem auto;
+    text-align: center;
+    padding: 1rem;
+    background-image: linear-gradient(to right, rgba(128, 0, 0, 0.05), rgba(128, 0, 0, 0.2), rgba(128, 0, 0, 0.05));
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #800000;
+    font-family: 'Times New Roman', serif;
+    margin-bottom: 0.5rem;
+}
+
+.stat-text {
+    display: block;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* Customer quote styling */
+.customer-quote {
+    font-style: italic;
+    text-align: right;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-right: 5px solid #551a8b;
+    border-radius: 10px 0 0 10px;
+}
+
+/* Nutrition facts disclaimer */
+.nutrition-facts {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background-color: rgba(255, 245, 220, 0.7);
+    border: 1px dashed #800000;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.nutrition-facts p {
+    margin: 0;
+}
+
+/* Generation comparison styling */
+.generation-comparison {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.generation {
+    flex: 1;
+    min-width: 200px;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.generation h4 {
+    margin-top: 0;
+    color: #800000;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.health-meter {
+    margin-top: 1.5rem;
+    height: 25px;
+    background-color: #ddd;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.health-meter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-image: linear-gradient(to right, #ff6b6b, #f06060);
+    border-radius: 12px 0 0 12px;
+    width: 0%; /* Default width */
+}
+
+.health-meter[data-level="70"]::before {
+    width: 70%;
+    background-image: linear-gradient(to right, #4caf50, #2e8b57);
+}
+
+.health-meter[data-level="40"]::before {
+    width: 40%;
+    background-image: linear-gradient(to right, #ffc107, #ff9800);
+}
+
+.health-meter[data-level="15"]::before {
+    width: 15%;
+    background-image: linear-gradient(to right, #ff5252, #b71c1c);
+}
+
+.health-meter {
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 25px;
+    position: relative;
+    color: #333;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Generational decline section styling */
+#generational-decline {
+    background-image: linear-gradient(to bottom, #ffffff, #f0f0f0);
+    border-top: 5px solid #800000;
+    border-bottom: 5px solid #800000;
+}
+
+/* Mobility section styling */
+#mobility-section {
+    background-image: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+    border-left: 8px solid #551a8b;
+    border-right: 8px solid #551a8b;
+}
+
+#mobility-section h3 {
+    color: #551a8b;
+    border-bottom-color: #800000;
+}
+
+#mobility-section h4 {
+    font-family: 'Times New Roman', serif;
+    color: #551a8b;
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+    text-align: center;
+}
+
+.prominent-image {
+    position: relative;
+    margin: 2rem auto;
+}
+
+.prominent-image::before,
+.prominent-image::after {
+    content: "🍔";
+    position: absolute;
+    font-size: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 15;
+}
+
+.prominent-image::before {
+    left: -5px;
+}
+
+.prominent-image::after {
+    right: -5px;
+    transform: translateY(-50%) scaleX(-1); /* Flip the burger emoji */
+}
+
+#mobility-section .info-image {
+    border: none;
+    box-shadow: 0 0 25px rgba(128, 0, 0, 0.5);
+}
+
+/* Animation for the mobility section */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+#mobility-section .final-thought {
+    animation: float 4s ease-in-out infinite;
+} 
