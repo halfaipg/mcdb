@@ -546,7 +546,13 @@ footer {
     background-color: #ddd;
     border-radius: 12px;
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* Change from hidden to visible */
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 25px;
+    color: #333;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
 .health-meter::before {
@@ -558,6 +564,7 @@ footer {
     background-image: linear-gradient(to right, #ff6b6b, #f06060);
     border-radius: 12px 0 0 12px;
     width: 0%; /* Default width */
+    z-index: 1; /* Add z-index */
 }
 
 .health-meter[data-level="70"]::before {
@@ -575,14 +582,10 @@ footer {
     background-image: linear-gradient(to right, #ff5252, #b71c1c);
 }
 
-.health-meter {
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.9rem;
-    line-height: 25px;
+/* Move the text on top of the health bar */
+.health-meter span {
     position: relative;
-    color: #333;
-    text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    z-index: 2; /* Higher than the bar */
 }
 
 /* Generational decline section styling */
@@ -650,4 +653,136 @@ footer {
 
 #mobility-section .final-thought {
     animation: float 4s ease-in-out infinite;
+}
+
+/* Improve header for mobile devices */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 0.5rem;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+        word-wrap: break-word;
+    }
+    
+    header h2 {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+    
+    header::before, header::after {
+        display: none; /* Hide the star decorations on mobile */
+    }
+    
+    .established {
+        margin-top: 0.3rem;
+        transform: rotate(0deg);
+    }
+}
+
+/* Responsive generation comparison */
+@media (max-width: 768px) {
+    .generation-comparison {
+        flex-direction: column;
+    }
+    
+    .generation {
+        margin-bottom: 1.5rem;
+    }
+    
+    .health-meter {
+        font-size: 0.8rem;
+    }
+}
+
+/* Make the comparison cards stack better on mobile */
+@media (max-width: 600px) {
+    .comparison {
+        grid-template-columns: 1fr !important;
+        grid-template-areas:
+            "item1"
+            "versus"
+            "item2"
+            "winner" !important;
+        gap: 5px !important;
+    }
+    
+    .versus {
+        margin: 5px 0;
+    }
+    
+    .item, .winner {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Make absurd comparisons more legible on mobile */
+    .absurd-comparisons {
+        font-size: 0.9rem;
+    }
+    
+    /* Improve menu items display on mobile */
+    .menu-image {
+        float: none;
+        margin: 1rem auto;
+        display: block;
+        transform: rotate(0deg);
+    }
+    
+    /* Fix spacing for the SAD stat blocks */
+    .sad-stat {
+        padding: 0.8rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .stat-text {
+        font-size: 1rem;
+    }
+}
+
+/* General responsive improvements */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.95rem;
+    }
+    
+    section {
+        padding: 1.5rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    main {
+        padding: 0 0.5rem;
+    }
+    
+    /* Improve the size and spacing of special sections */
+    #sad-reality-check, #mobility-section {
+        border-left-width: 4px;
+        border-right-width: 4px;
+    }
+    
+    /* Make quotes more readable */
+    .sad-quote {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+    }
+    
+    /* Adjust ingredient list on mobile */
+    .ingredient-list ul {
+        column-count: 1;
+    }
+    
+    /* Make final thought more readable */
+    .final-thought {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+    }
 } 
