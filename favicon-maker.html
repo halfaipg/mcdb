@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonaldBees Favicon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .favicon-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+        }
+        
+        .favicon-container {
+            width: 64px;
+            height: 64px;
+            background-color: #800000; /* Maroon background */
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        
+        .favicon-text {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 32px;
+            color: #f8d568; /* Gold text */
+            letter-spacing: -2px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            z-index: 2;
+        }
+        
+        .bee-stripe {
+            position: absolute;
+            height: 8px;
+            width: 100%;
+            background-color: #551a8b; /* Purple Applebee's-like color */
+            bottom: 12px;
+            z-index: 1;
+        }
+        
+        /* Option 2: with burger icon */
+        .burger-favicon {
+            background-color: #c00; /* McDonald's red */
+            overflow: hidden;
+        }
+        
+        .burger {
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            background-color: #f8d568; /* Bun color */
+            border-radius: 10px 10px 5px 5px;
+            top: 10px;
+            z-index: 2;
+        }
+        
+        .patty {
+            position: absolute;
+            width: 40px;
+            height: 12px;
+            background-color: #663300; /* Patty color */
+            border-radius: 2px;
+            top: 25px;
+            z-index: 3;
+        }
+        
+        .bottom-bun {
+            position: absolute;
+            width: 40px;
+            height: 15px;
+            background-color: #f8d568; /* Bun color */
+            border-radius: 5px 5px 10px 10px;
+            bottom: 10px;
+            z-index: 1;
+        }
+        
+        .stripe {
+            position: absolute;
+            height: 6px;
+            width: 100%;
+            background-color: #551a8b; /* Purple */
+            bottom: 0;
+            left: 0;
+            z-index: 4;
+        }
+        
+        /* Option 3: Combined approach */
+        .combined-favicon {
+            background: linear-gradient(135deg, #c00 0%, #800000 100%);
+        }
+        
+        .mini-burger {
+            position: absolute;
+            width: 20px;
+            height: 15px;
+            background-color: #f8d568; /* Bun color */
+            border-radius: 5px 5px 2px 2px;
+            top: 10px;
+            left: 8px;
+            z-index: 2;
+        }
+        
+        .mini-patty {
+            position: absolute;
+            width: 20px;
+            height: 6px;
+            background-color: #663300; /* Patty color */
+            border-radius: 1px;
+            top: 16px;
+            left: 8px;
+            z-index: 3;
+        }
+        
+        .mini-bottom {
+            position: absolute;
+            width: 20px;
+            height: 7px;
+            background-color: #f8d568; /* Bun color */
+            border-radius: 2px 2px 5px 5px;
+            top: 22px;
+            left: 8px;
+            z-index: 2;
+        }
+        
+        .favicon-mb {
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: #f8d568; /* Gold text */
+            position: absolute;
+            right: 6px;
+            bottom: 12px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+            z-index: 2;
+        }
+        
+        .instructions {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="favicon-grid">
+        <!-- Option 1: Simple MB -->
+        <div class="favicon-container">
+            <div class="bee-stripe"></div>
+            <div class="favicon-text">MB</div>
+        </div>
+        
+        <!-- Option 2: Burger with stripe -->
+        <div class="favicon-container burger-favicon">
+            <div class="burger"></div>
+            <div class="patty"></div>
+            <div class="bottom-bun"></div>
+            <div class="stripe"></div>
+        </div>
+        
+        <!-- Option 3: Combined approach -->
+        <div class="favicon-container combined-favicon">
+            <div class="mini-burger"></div>
+            <div class="mini-patty"></div>
+            <div class="mini-bottom"></div>
+            <div class="favicon-mb">MB</div>
+            <div class="stripe"></div>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        <p>Choose one of the icons above, take a screenshot of just that square, then convert it to favicon.ico using an online converter.</p>
+        <p>Recommendation: <a href="https://favicon.io/favicon-converter/" target="_blank">favicon.io/favicon-converter/</a></p>
+    </div>
+</body>
+</html> 
