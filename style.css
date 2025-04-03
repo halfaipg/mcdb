@@ -1,11 +1,12 @@
 /* Basic Reset & Body Styling */
 body {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif; /* Oh yes. */
+    font-family: Arial, sans-serif; /* Changed from Comic Sans to Arial */
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4; /* A nice neutral, slightly depressing background */
     color: #333;
+    font-size: 1.1rem; /* Increased from default */
     background-image: linear-gradient(to bottom right, #f2f2f2, #e0e0e0, #d5d5d5); /* Subtle gradient instead of texture */
 }
 
@@ -42,7 +43,7 @@ header h1 {
     margin: 0;
     font-size: 3.5rem; /* Bigger! */
     text-shadow: 3px 3px 0px #551a8b, 5px 5px 0px rgba(0,0,0,0.2); /* Drop shadow for that '90s GeoCities look */
-    font-family: 'Times New Roman', serif; /* Fancy font for the title */
+    font-family: Arial, sans-serif; /* Changed from Times New Roman */
     letter-spacing: 2px;
 }
 
@@ -200,8 +201,8 @@ footer {
 }
 
 .established {
-    font-family: "Comic Sans MS", cursive;
-    font-size: 1rem;
+    font-family: Arial, sans-serif; /* Changed from Comic Sans */
+    font-size: 1.1rem; /* Increased from 1rem */
     color: #f8d568;
     margin-top: 0.5rem;
     border: none; /* Remove border */
@@ -260,8 +261,8 @@ footer {
 }
 
 .daily-special h4 {
-    font-family: "Brush Script MT", cursive;
-    font-size: 1.5rem;
+    font-family: Arial, sans-serif; /* Changed from Brush Script MT */
+    font-size: 1.6rem; /* Increased from 1.5rem */
     color: #800000;
     margin: 0.5rem 0;
 }
@@ -662,12 +663,12 @@ footer {
     }
     
     header h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem; /* Increased from 2.5rem */
         word-wrap: break-word;
     }
     
     header h2 {
-        font-size: 1.1rem;
+        font-size: 1.2rem; /* Increased from 1.1rem */
         padding: 0 1rem;
     }
     
@@ -678,6 +679,7 @@ footer {
     .established {
         margin-top: 0.3rem;
         transform: rotate(0deg);
+        font-size: 1rem; /* Increased from 0.9rem */
     }
 }
 
@@ -714,12 +716,12 @@ footer {
     
     .item, .winner {
         padding: 0.6rem;
-        font-size: 0.9rem;
+        font-size: 1rem; /* Increased from 0.9rem */
     }
     
     /* Make absurd comparisons more legible on mobile */
     .absurd-comparisons {
-        font-size: 0.9rem;
+        font-size: 1rem; /* Increased from 0.9rem */
     }
     
     /* Improve menu items display on mobile */
@@ -736,18 +738,18 @@ footer {
     }
     
     .stat-number {
-        font-size: 2.5rem;
+        font-size: 2.8rem; /* Increased from 2.5rem */
     }
     
     .stat-text {
-        font-size: 1rem;
+        font-size: 1.1rem; /* Increased from 1rem */
     }
 }
 
 /* General responsive improvements */
 @media (max-width: 768px) {
     body {
-        font-size: 0.95rem;
+        font-size: 1.05rem; /* Increased from 0.95rem */
     }
     
     section {
